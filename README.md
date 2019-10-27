@@ -37,7 +37,6 @@ roslaunch audio_play play.launch do_timestamp:=false
     export ROS_IP=<LOCAL PC IP>
     export ROS_HOSTNAME=<LOCAL PC IP>
     export ROS_MASTER_URI=http://<ROS MASTER IP>:11311/
-
     ```
 * If you can get the audio data but can't hear it
     * This one can be tricky, because you are dealing with device on linux. So first thing you want to try is test if you can hear with your speaker. You can launch 
