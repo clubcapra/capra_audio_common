@@ -38,7 +38,7 @@ namespace audio_transport
         ros::param::param<std::string>("~device", device, "");
 
         std::string topic;
-        ros::param::param<std::string>("~topic", topic, "");
+        ros::param::param<std::string>("~topic", topic, "audio");
 
         _pub = _nh.advertise<audio_common_msgs::AudioData>(topic, 10, true);
 
