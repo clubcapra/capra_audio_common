@@ -52,3 +52,6 @@ roslaunch audio_play play.launch do_timestamp:=false
 This repository contains the ROS audio\_common package.
 
 For user documentation, please refer to the [ROS Wiki page for audio\_common](http://wiki.ros.org/audio_common)
+
+# Topic name
+The default topic name for the audio capture and play is "audio" you can change it in the launch files in `capra_audio/launch`
