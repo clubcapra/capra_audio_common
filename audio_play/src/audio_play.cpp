@@ -16,14 +16,16 @@ namespace audio_transport
 
         std::string dst_type;
         std::string device;
+        std::string topic;
         bool do_timestamp;
 
         // The destination of the audio
         ros::param::param<std::string>("~dst", dst_type, "alsasink");
         ros::param::param<std::string>("~device", device, std::string());
         ros::param::param<bool>("~do_timestamp", do_timestamp, true);
+        ros::param::param<std::string>("~topic", topic, "audio");
 
-        _sub = _nh.subscribe("audio", 10, &RosGstPlay::onAudio, this);
+        _sub = _nh.subscribe(topic, 10, &RosGstPlay::onAudio, this);
 
         _loop = g_main_loop_new(NULL, false);
 

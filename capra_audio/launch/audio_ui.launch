@@ -1,0 +1,18 @@
+<launch>
+  <arg name="ns" default="audio" />
+  <group ns="$(arg ns)">
+    <node name="audio_capture" pkg="audio_capture" type="audio_capture" output="screen">
+      <param name="bitrate" value="128" />
+      <param name="device" value="" />
+      <param name="channels" value="1" />
+      <param name="sample_rate" value="16000" />
+      <param name="format" value="mp3" />
+      <param name="topic" value="audio_ui" />
+    </node>
+    <node name="audio_play" pkg="audio_play" type="audio_play" output="screen">
+      <param name="dst" value="alsasink" />
+      <param name="do_timestamp" value="false" />
+      <param name="topic" value="audio_robot" />
+    </node>
+  </group>
+</launch>
