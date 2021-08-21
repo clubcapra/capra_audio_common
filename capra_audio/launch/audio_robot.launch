@@ -1,5 +1,5 @@
 <launch>
-  <arg name="ns" default="audio" />
+  <arg name="ns" default="markhor" />
   <group ns="$(arg ns)">
     <node name="audio_capture" pkg="audio_capture" type="audio_capture" output="screen">
       <param name="bitrate" value="128" />
