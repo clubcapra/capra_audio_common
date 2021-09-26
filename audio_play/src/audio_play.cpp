@@ -129,7 +129,7 @@ namespace audio_transport
 
 int main (int argc, char **argv)
 {
-  ros::init(argc, argv, "audio_play");
+  ros::init(argc, argv, "audio_play", ros::init_options::AnonymousName);
   gst_init(&argc, &argv);
 
   audio_transport::RosGstPlay client;

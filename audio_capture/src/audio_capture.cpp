@@ -222,7 +222,7 @@ namespace audio_transport
 
 int main (int argc, char **argv)
 {
-  ros::init(argc, argv, "audio_capture");
+  ros::init(argc, argv, "audio_capture", ros::init_options::AnonymousName);
   gst_init(&argc, &argv);
 
   audio_transport::RosGstCapture server;
