@@ -12,16 +12,35 @@ rosdep install --from-paths <PATH TO CAPRA_AUDIO_COMMON_SRC_FOLDER> --ignore-src
 
 In the capra_audio_common workspace folder launch `catkin_make` command. Once the compiling is successful you can source the workspace with ` source devel/setup.bash` (If you use zsh, source the `setup.zsh` file)
 
-# How to stream audio between two computer
+# Launch procedure
+Before starting, be sure to have your .bashrc correctly setup, see the first step of the 'Troubleshooting' section.
+## Normal use
+### Through the Capra web user interface
+On the computer running the UI, you have to press two buttons to communicate both ways with the robot.
+First, click on "Audio start" on the bottom bar.
+Second, through the "Launch" tab in "Config", select the launch button for the Robot's audio.
 
-## Start capturing audio
+### Through your terminal
+In a terminal connected to the robot, run this command:
+```
+roslaunch capra_audio audio_robot.launch
+```
+
+Then, in a local terminal, run the command for local audio:
+```
+roslaunch capra_audio audio_ui.launch
+```
+
+## How to stream audio between two computer for testing purposes
+
+### Start capturing audio
 On the computer you want to capture the audio capture, execute this command: 
 
 ```
 roslaunch audio_capture capture.launch
 ```
 
-## Start listening audio
+### Start listening audio
 On the computer, you want to listen to the audio captured, execute this command:
 
 ```
